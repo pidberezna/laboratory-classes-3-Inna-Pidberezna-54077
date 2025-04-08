@@ -8,17 +8,14 @@
     <%- include('partials/navigation', { menuLinks: menuLinks, activeLinkPath:
     activeLinkPath }); %>
     <main>
-      <h1 class="heading">Products</h1>
-      <% if (products && products.length > 0) { %>
-      <ul>
-        <% products.forEach(product => { %>
-        <li>
-          Name: <%= product.name %>, Description: <%= product.description %>
-        </li>
-        <% }); %>
-      </ul>
+      <h1 class="heading">Newest product</h1>
+      <% if (newestProduct && Object.keys(newestProduct).length > 0) { %>
+      <div>
+        New product data - Name: <%= newestProduct.name %>, Description: <%=
+        newestProduct.description %>
+      </div>
       <% } else { %>
-      <div>No products available.</div>
+      <div>No data available</div>
       <% } %>
     </main>
   </body>
